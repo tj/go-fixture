@@ -7,12 +7,12 @@ Package fixture provides test assertions using test fixtures with nice line diff
 ```go
 func TestGenerate(t *testing.T) {
   // ... pretend we generate some client code here for TypeScript
-	var act bytes.Buffer
-	err = tsclient.Generate(&act)
-	assert.NoError(t, err, "generating")
+  var act bytes.Buffer
+  err = tsclient.Generate(&act)
+  assert.NoError(t, err, "generating")
 
   // assert the contents of act.Bytes() to the test fixture ./testdata/client.ts
-	fixture.Assert(t, "client.ts", act.Bytes())
+  fixture.Assert(t, "client.ts", act.Bytes())
 }
 ```
 
