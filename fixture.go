@@ -50,6 +50,6 @@ func Assert(t testing.TB, name string, expected []byte) {
 	exp := string(expected)
 	if act != exp {
 		result := cdiff.Diff(exp, act, cdiff.LineByLine)
-		t.Fatalf("Result does not match %q:\n%s", name, result.UnifiedWithGooKitColor("Expected", "Actual", , cdiff.GooKitColorTheme))
+		t.Fatalf("Result does not match %q:\n%s", name, result.UnifiedWithGooKitColor("Expected", "Actual", 5, cdiff.GooKitColorTheme))
 	}
 }
